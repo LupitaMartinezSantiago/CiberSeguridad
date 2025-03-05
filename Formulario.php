@@ -6,10 +6,10 @@ $username = "root";
 $password = "";
 $dbname = "test_db";
 
-// Crear conexión con MySQL
+// Crear conexión con MySQL segun los datos de la BD
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexión
+// Verificar conexión para no ahiga error
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
