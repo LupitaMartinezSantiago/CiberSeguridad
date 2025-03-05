@@ -16,7 +16,7 @@
    
 
     <script>
-        // Cargar los datos de la base de datos con AJAX
+        
         fetch('get_users.php')
             .then(response => response.json())
             .then(data => {
@@ -26,7 +26,7 @@
                 if (data.username) {
                     usernameSpan.textContent = data.username;
                 }
-
+ // Cargar los datos de la base de datos con AJAX
                 data.users.forEach(user => {
                     let row = `<tr><td>${user.id}</td><td>${user.username}</td><td>${user.email}</td></tr>`;
                     tableBody.innerHTML += row;
