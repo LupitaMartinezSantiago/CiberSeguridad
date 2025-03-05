@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
+    <style>
+        table { width: 60%; border-collapse: collapse; margin: 20px auto; }
+        th, td { border: 1px solid black; padding: 10px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+    <h2>¡BIENVENIDO HAS INGRESADO CON EXITO! <span id="username"></span>!</h2>
+  
+   
+
+    <script>
+        // Cargar los datos de la base de datos con AJAX
+        fetch('get_users.php')
+            .then(response => response.json())
+            .then(data => {
+                let tableBody = document.getElementById("userTable");
+                let usernameSpan = document.getElementById("username");
+
+                if (data.username) {
+                    usernameSpan.textContent = data.username;
+                }
+
+                data.users.forEach(user => {
+                    let row = `<tr><td>${user.id}</td><td>${user.username}</td><td>${user.email}</td></tr>`;
+                    tableBody.innerHTML += row;
+                });
+            })
+            .catch(error => console.error("Error cargando los datos:", error));
+    </script>
+</body>
+</html>
