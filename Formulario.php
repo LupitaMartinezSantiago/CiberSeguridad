@@ -1,5 +1,6 @@
 <?php
-session_start(); // Iniciar sesión
+// Inicio de Sesion
+session_start(); 
 
 $servername = "localhost";
 $username = "root";
