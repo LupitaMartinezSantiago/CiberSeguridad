@@ -27,7 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Guardar el usuario en sesión y redirigir a dashboard.php
+
+
+           // Guardar el usuario en sesión y redirigir a dashboard.php
         $_SESSION['username'] = $user;
         header("Location: dashboard.php");
         exit();
