@@ -21,7 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $_POST['username'];
     $pass = $_POST['password'];
 
-    // Consulta SQL para obtener el usuario
+
+    // Configuracion de SQL para obtener el usuario
     $sql = "SELECT * FROM users WHERE username = '$user' AND password = '$pass'";
     $result = $conn->query($sql);
 
