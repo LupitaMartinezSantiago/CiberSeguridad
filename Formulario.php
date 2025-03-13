@@ -10,7 +10,7 @@ $dbname = "test_db";
 // Crear conexión con MySQL segun los datos de la BD
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexión para no ahiga error
+//Conexion y verificacion de error
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
